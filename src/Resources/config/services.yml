@@ -1,0 +1,10 @@
+services:
+    oka_notifier_client.notifier:
+        class: Oka\Notifier\ClientBundle\Notifier
+        arguments: ['@oka_service_discovery.catalog']
+
+    Oka\Notifier\ClientBundle\EventListener\RequestSubscriber:
+        arguments: ['@oka_notifier_client.notifier']
+        tags: ['kernel.event_subscriber']
+
+    Oka\Notifier\ClientBundle\Notifier: '@oka_notifier_client.notifier'
