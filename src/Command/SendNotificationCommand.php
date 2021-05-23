@@ -1,9 +1,9 @@
 <?php
-namespace Oka\NotifierBundle\Command;
+namespace Oka\Notifier\ClientBundle\Command;
 
-use Oka\NotifierBundle\Notification\Address;
-use Oka\NotifierBundle\Notification\Notification;
-use Oka\NotifierBundle\Notification\Notifier;
+use Oka\Notifier\ClientBundle\Notifier;
+use Oka\Notifier\Message\Address;
+use Oka\Notifier\Message\Notification;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -13,7 +13,7 @@ use Symfony\Component\Console\Question\Question;
 
 class SendNotificationCommand extends Command
 {
-	protected static $defaultName = 'oka:notifier:send-notification';
+	protected static $defaultName = 'oka:notifier-client:send-notification';
 	
 	private $notifier;
 	
@@ -38,18 +38,18 @@ class SendNotificationCommand extends Command
 	
 	protected function interact(InputInterface $input, OutputInterface $output)
 	{
-		if (!$input->getArgument('username')) {
-			$question = new Question('Please choose a username:');
+		if (!$input->getArgument('message')) {
+			$question = new Question('Please enter a message:');
 			$question->setValidator(function($username){
 				if (true === empty($username)) {
-					throw new \Exception('Username can not be empty');
+					throw new \Exception('Message can not be empty');
 				}
 				
 				return $username;
 			});
 				
 				$answer = $this->getHelper('question')->ask($input, $output, $question);
-				$input->setArgument('username', $answer);
+				$input->setArgument('message', $answer);
 		}
 	}
 	
