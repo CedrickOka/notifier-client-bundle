@@ -1,4 +1,5 @@
 <?php
+
 namespace Oka\Notifier\ClientBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;

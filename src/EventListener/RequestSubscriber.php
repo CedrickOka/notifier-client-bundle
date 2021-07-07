@@ -1,4 +1,5 @@
 <?php
+
 namespace Oka\Notifier\ClientBundle\EventListener;
 
 use Oka\Notifier\ClientBundle\Notifier;
@@ -13,36 +14,36 @@ use Symfony\Component\HttpKernel\Event\TerminateEvent;
  */
 class RequestSubscriber implements EventSubscriberInterface
 {
-	private $notifier;
-	
-	public function __construct(Notifier $notifier)
-	{
-		$this->notifier = $notifier;
-	}
-	
-	public function onKernelTerminate(TerminateEvent $event)
-	{
-		if (false === $event->isMasterRequest()) {
-			return;
-		}
-		
-		$this->notifier->flush();
-	}
-	
-	public function onConsoleTerminate(ConsoleTerminateEvent $event)
-	{
-		if (0 !== $event->getExitCode()) {
-			return;
-		}
-		
-		$this->notifier->flush();
-	}
-	
-	public static function getSubscribedEvents()
-	{
-		return [
-			KernelEvents::TERMINATE => 'onKernelTerminate',
-			ConsoleEvents::TERMINATE => 'onConsoleTerminate'
-		];
-	}
+    private $notifier;
+
+    public function __construct(Notifier $notifier)
+    {
+        $this->notifier = $notifier;
+    }
+
+    public function onKernelTerminate(TerminateEvent $event)
+    {
+        if (false === $event->isMasterRequest()) {
+            return;
+        }
+
+        $this->notifier->flush();
+    }
+
+    public function onConsoleTerminate(ConsoleTerminateEvent $event)
+    {
+        if (0 !== $event->getExitCode()) {
+            return;
+        }
+
+        $this->notifier->flush();
+    }
+
+    public static function getSubscribedEvents()
+    {
+        return [
+            KernelEvents::TERMINATE => 'onKernelTerminate',
+            ConsoleEvents::TERMINATE => 'onConsoleTerminate'
+        ];
+    }
 }
