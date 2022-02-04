@@ -26,15 +26,15 @@
 		"php" : ">=7.2",
 		"coka/notifier-message" : "^1.0",
 		"coka/service-discovery-bundle" : "^1.1",
-		"symfony/config" : "^4.4",
-		"symfony/console" : "^4.4",
-		"symfony/dependency-injection" : "^4.4",
-		"symfony/http-kernel" : "^4.4"
+		"symfony/config" : "^4.4 || ^5.4",
+		"symfony/console" : "^4.4 || ^5.4",
+		"symfony/dependency-injection" : "^4.4 || ^5.4",
+		"symfony/http-kernel" : "^4.4 || ^5.4"
 	},
 	"require-dev" : {
-		"symfony/framework-bundle" : "^4.4",
-		"symfony/phpunit-bridge" : "^4.4",
-		"symfony/yaml" : "^4.4"
+		"symfony/framework-bundle" : "^4.4 || ^5.4",
+		"symfony/phpunit-bridge" : "^4.4 || ^5.4",
+		"symfony/yaml" : "^4.4 || ^5.4"
 	},
 	"config" : {
 		"sort-packages" : true
@@ -48,6 +48,6 @@
 		}
 	},
 	"support" : {
-		"docs" : "https://github.com/CedrickOka/notifier-client-bundle/blob/master/src/Resources/doc/index.md"
+		"docs" : "https://github.com/CedrickOka/notifier-client-bundle/blob/master/docs/index.md"
 	}
 }
