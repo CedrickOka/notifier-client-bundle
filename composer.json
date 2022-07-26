@@ -11,7 +11,7 @@
 	],
 	"autoload" : {
 		"psr-4" : {
-			"Oka\\Notifier\\ClientBundle\\" : "src"
+			"Oka\\Notifier\\ClientBundle\\" : "src/"
 		},
 		"exclude-from-classmap" : [
 			"/tests/"
@@ -23,9 +23,9 @@
 		}
 	},
 	"require" : {
-		"php" : ">=7.2",
+		"php" : ">=7.4",
 		"coka/notifier-message" : "^1.0",
-		"coka/service-discovery-bundle" : "^1.1",
+		"coka/service-discovery-bundle" : "^1.4",
 		"symfony/config" : "^4.4 || ^5.4",
 		"symfony/console" : "^4.4 || ^5.4",
 		"symfony/dependency-injection" : "^4.4 || ^5.4",
