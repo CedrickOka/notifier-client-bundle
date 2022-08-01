@@ -26,6 +26,8 @@
 		"php" : ">=7.4",
 		"coka/notifier-message" : "^1.0",
 		"coka/service-discovery-bundle" : "^1.4",
+		"guzzlehttp/guzzle" : "^6.0 || ^7.4",
+		"psr/log" : "^1 || ^2",
 		"symfony/config" : "^4.4 || ^5.4",
 		"symfony/console" : "^4.4 || ^5.4",
 		"symfony/dependency-injection" : "^4.4 || ^5.4",
